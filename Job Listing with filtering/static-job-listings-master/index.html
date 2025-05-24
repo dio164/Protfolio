@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Job Listings</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div id="filter-wrap" class="filter-wrapper">
+        <div class="filter-container">
+          <i id="filter-btn" class="fa-solid fa-filter filter-icon" title="Filter"></i>
+          <div id="dropdown-menu" class="filter-options-dropdown">
+            <div class="req">Frontend</div>
+            <div class="req">Senior</div>
+            <div class="req">HTML</div>
+            <div class="req">Backend</div>
+            <div class="req">Junior</div>
+            <div class="req">Python</div>
+            <div class="req">Fullstack</div>
+            <div class="req">Midweight</div>
+            <div class="req">RoR</div>
+            <div class="req">Django</div>
+            <div class="req">Ruby</div>
+            <div class="req">JavaScript</div>
+            <div class="req">CSS</div>
+            <div class="req">React</div>
+            <div class="req">Sass</div>
+            <div class="req">Vue</div>
+          </div>
+          <div id="filter-contain" class="filter-container">
+          </div>
+        </div>
+
+        <a id="clear" title="Clear" href="#">Clear</a>
+      </div>
+    </div>
+    <div class="jobs-wrapper">
+      <div class="job-container active">
+        <!-- Item Start -->
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/photosnap.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">Photosnap</h3>
+              <div class="feat">
+                <div class="company-feat-new">New!</div>
+                <div class="company-feat-featured">Featured</div>
+              </div>
+            </div>
+
+            <div class="role">
+              <div class="role-head"><h2>Senior Frontend Developer</h2></div>
+              <div class="role-details">
+                <div class="role-info">1d ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Full Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">USA only</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <!-- Role -->
+          <div class="req">Frontend</div>
+          <!-- Level -->
+          <div class="req">Senior</div>
+          <!-- Languages -->
+          <div class="req">HTML</div>
+          <div class="req">CSS</div>
+          <div class="req">JavaScript</div>
+          <!-- Item End -->
+        </div>
+      </div>
+
+      <div class="job-container active">
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/manage.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">Manage</h3>
+              <div class="feat">
+                <div class="company-feat-new">New!</div>
+                <div class="company-feat-featured">Featured</div>
+              </div>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Fullstack Developer</h2></div>
+              <div class="role-details">
+                <div class="role-info">1d ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Part Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Remote</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Fullstack</div>
+          <div class="req">Midweight</div>
+          <div class="req">Python</div>
+          <div class="req">React</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/account.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">Account</h3>
+              <div class="feat">
+                <div class="company-feat-new">New!</div>
+              </div>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Junior Frontend Developer</h2></div>
+              <div class="role-details">
+                <div class="role-info">2d ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Part Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">USA only</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Frontend</div>
+          <div class="req">Junior</div>
+          <div class="req">React</div>
+          <div class="req">Sass</div>
+          <div class="req">JavaScript</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/myhome.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">MyHome</h3>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Junior Frontend Developer</h2></div>
+              <div class="role-details">
+                <div class="role-info">5d ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Contract</div>
+                <div class="role-info">.</div>
+                <div class="role-info">USA only</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Frontend</div>
+          <div class="req">Junior</div>
+          <div class="req">CSS</div>
+          <div class="req">JavaScript</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img
+            src="/static-job-listings-master/images/loop-studios.svg"
+            alt=""
+          />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">Loop Studios</h3>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Software Engineer</h2></div>
+              <div class="role-details">
+                <div class="role-info">1w ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Full Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Fullstack</div>
+          <div class="req">Midweight</div>
+          <div class="req">JavaScript</div>
+          <div class="req">Ruby</div>
+          <div class="req">Sass</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/faceit.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">FaceIt</h3>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Junior Backend Developer</h2></div>
+              <div class="role-details">
+                <div class="role-info">2w ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Full Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">UK only</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Backend</div>
+          <div class="req">Junior</div>
+          <div class="req">Ruby</div>
+          <div class="req">RoR</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/shortly.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">Shortly</h3>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Junior Developer</h2></div>
+              <div class="role-details">
+                <div class="role-info">2w ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Full Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Frontend</div>
+          <div class="req">Junior</div>
+          <div class="req">HTML</div>
+          <div class="req">Sass</div>
+          <div class="req">JavaScript</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/insure.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">Insure</h3>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Junior Frontend Developer</h2></div>
+              <div class="role-details">
+                <div class="role-info">2w ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Full Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">USA only</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Frontend</div>
+          <div class="req">Junior</div>
+          <div class="req">Vue</div>
+          <div class="req">JavaScript</div>
+          <div class="req">Sass</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img src="/static-job-listings-master/images/eyecam-co.svg" alt="" />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">Enyecam Co.</h3>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Full Stack Engineer</h2></div>
+              <div class="role-details">
+                <div class="role-info">3w ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Full Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Fullstack</div>
+          <div class="req">Midweight</div>
+          <div class="req">JavaScript</div>
+          <div class="req">Django</div>
+          <div class="req">Python</div>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-details">
+          <img
+            src="/static-job-listings-master/images/the-air-filter-company.svg"
+            alt=""
+          />
+          <div class="job-head">
+            <div class="job-title">
+              <h3 class="company-name">The Air Filter Company</h3>
+            </div>
+            <div class="role">
+              <div class="role-head"><h2>Front-end Dev</h2></div>
+              <div class="role-details">
+                <div class="role-info">1mo ago</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Part Time</div>
+                <div class="role-info">.</div>
+                <div class="role-info">Worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="requirements">
+          <div class="req">Frontend</div>
+          <div class="req">Junior</div>
+          <div class="req">React</div>
+          <div class="req">Sass</div>
+          <div class="req">JavaScript</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Chidubem David Isaac-Chidike</a>.
+    </div>
+    <script
+      src="https://kit.fontawesome.com/2d3c42b09f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

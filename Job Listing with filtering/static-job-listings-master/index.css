@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan" , sans-serif;
+}
+
+.header {
+  background: url("/static-job-listings-master/images/bg-header-desktop.svg");
+  height: 156px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-wrapper {
+  position: relative;
+  top: 4.8rem;
+  width: 80%;
+  min-height: 72px;
+  background: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-items {
+  display: flex;
+  margin-right: 12px;
+}
+
+.filter-items i {
+  align-self: center;
+  background: #5CA5A5;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 0 8px 8px 0;
+  padding: 8px;
+}
+
+.filter-items i:hover {
+  background: #2B3939;
+}
+
+.filter {
+  padding: 8px;
+  color: #5CA5A5;
+  background-color: hsl(180, 52%, 96%);
+  margin: 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 8px 0 0 8px;
+  align-self: center;
+}
+
+.filter-wrapper input {
+  border: none;
+}
+
+.filter-wrapper a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #7C8F8F;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.filter-wrapper a:hover {
+  color: #5CA5A5;
+  text-decoration: underline;
+}
+
+body {
+  background-color: hsl(180, 52%, 96%);
+}
+.jobs-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+.job-container {
+  width: 80%;
+  min-height: 152px;
+  background-color: white;
+  margin: 20px 0;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.active {
+  border-left: solid #5CA5A5;
+  border-width: 5px;
+
+}
+
+.job-details img {
+  margin-right:  24px;
+}
+
+.job-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.job-head {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.company-name {
+    color: #5CA5A5;
+    font-weight: bold;
+    font-size: 18px;
+    align-self: center;
+}
+.feat {
+  display: flex;
+  margin-left: 15px;
+}
+.company-feat-new {
+  background: #5CA5A5;
+  margin-right: 5px;
+  border-radius: 16px;
+  padding: 8px;
+  color: white;
+  line-height: 14px;
+  align-self: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+
+.company-feat-featured {
+  background: #2B3939;
+  margin: 0 5px;
+  border-radius: 16px;
+  padding: 8px;
+  color: white;
+  line-height: 14px;
+  align-self: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+.job-title {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+
+.role h2 {
+  color: #2B3939;
+  align-self: center;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.role h2:hover {
+  color: #5CA5A5;
+}
+.role-head {
+  margin-bottom: 7px;
+}
+.role-details {
+  display: flex;
+  justify-content: space-between;
+}
+.role-info {
+  color: #7C8F8F;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.requirements {
+  display: flex;
+  flex-wrap: wrap;
+}
+.req {
+  padding: 8px;
+  color: #5CA5A5;
+  background-color: hsl(180, 52%, 96%);
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.req:hover {
+  color: white;
+  background-color: #5CA5A5;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.filter-icon {
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+  align-self: center;
+  margin-right: 12px;
+}
+
+.filter-icon:hover {
+  transform: scale(1.5);
+}
+
+.filter-options-dropdown {
+  width: 200px;
+  height: 100%;
+  background: #FFFFFF;
+  position: absolute;
+  top: 55px;
+  z-index: 999;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1) ;
+}
+
+.filter-options-dropdown .req {
+  text-align: center;
+  margin: 0 0 0 0;
+  border-radius: 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .filter-items {
+  margin-bottom: 6px;
+  }
+
+  .req {
+    margin: 8px 8px 8px 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .job-details img {
+    position: relative;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+  }
+}
