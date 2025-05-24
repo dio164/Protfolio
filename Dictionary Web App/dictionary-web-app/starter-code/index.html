@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Frontend Mentor | Dictionary web app</title>
+  </head>
+  <body id="body" class="body">
+    <div class="wrapper">
+      <div class="header">
+        <i
+          ><img
+            src="/dictionary-web-app/starter-code/assets/images/logo.svg"
+            alt="Book"
+        /></i>
+        <div class="view">
+          <div id="font-changer" class="font">
+            <p>San Serif</p>
+            <div class="font-dropdown">
+              <img src="/dictionary-web-app/starter-code/assets/images/icon-arrow-down.svg" alt="">
+              <div class="dropdown-content">
+                <a href="#" id="inter" class="font-option font-1" data-font="Inter">San Serif</a>
+                <a href="#" id="lora" class="font-option font-2" data-font="Lora">Serif</a>
+                <a href="#" id="inconsolata" class="font-option font-3" data-font="Inconsolata">Mono</a>
+              </div>
+            </div>
+          </div>
+          <div class="modes-container">
+            <div class="modes">
+              <label for="checkbox" class="label">
+                <div id="dark-mode" class="ball"></div>
+              </label>
+              <i>
+                <img
+                  src="/dictionary-web-app/starter-code/assets/images/icon-moon.svg"
+                  alt="dark-mode"
+              /></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio src="" id="sound"></audio>
+      <div id="search-contain" class="search-container">
+        <input
+          id="search-bar"
+          class="search-box"
+          type="text"
+          title="search-box"
+        />
+        <img
+          id="search-button"
+          src="/dictionary-web-app/starter-code/assets/images/icon-search.svg"
+          alt="search"
+        />
+      </div>
+      <div class="error-msg">
+        <p id="empty-error">Whoops, can’t be empty…</p>
+      </div>
+
+      <div id="result" class="body">
+        <div class="welcome-text">
+          <h1>Welcome to my Dictionary web app</h1>
+          <p>Search for a word using the search bar above</p>
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/2d3c42b09f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
