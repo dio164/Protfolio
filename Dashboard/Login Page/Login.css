@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Poppins' , sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient( 135deg, #555555,  10%, #0b0d10 100%);
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+}
+.login-box {
+    width: 500px;
+    height: auto;
+    background: rgba(11, 13, 16, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+}
+
+.hide{
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(11, 13, 16, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease, height 0s linear 0.5s, padding 0s linear 0.5s;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.login-box h2 {
+    color: #fdfdfd;
+    text-align: center;
+    font-size: 2em;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.input-box input {
+    padding: 10px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.error-message {
+    display: none;
+}
+.error-message p {
+    color: red;
+    font-size: 12px;
+    margin-left: 40px;
+}
+
+.show-error-message{
+    display: block;
+}
+
+.login-form i,.registration-form i {
+    color: #fdfdfd;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.login-form i:hover,.registration-form i:hover {
+    transform: scale(1.2);
+    color: #5c85e7;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    color: #fdfdfd;
+}
+
+.remember-forgot label input {
+    margin: 0 8px;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #fdfdfd;
+    transition: all 0.5s ease-in-out;
+}
+
+.remember-forgot a:hover {
+    color: #5c85e7;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+    margin: 0 20px;
+    width: 150px;
+}
+
+.loader {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #0b0d10;
+    animation: an1 1s ease infinite;
+}
+
+@keyframes an1 {
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.submit-btn:hover {
+    background-color: #5c85e7;
+    color: #fdfdfd;
+}
+
+.register-link-wrapper{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-link-wrapper p {
+    color: #fdfdfd;
+    margin-right: 5px;
+}
+
+.register-link {
+    text-decoration: none;
+    color: #fdfdfd;
+    transition: all 0.5s ease-in-out;
+}
+.register-link:hover {
+    color: #5c85e7;
+}
+.login-link-wrapper {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-link-wrapper p {
+    color: #fdfdfd;
+    margin-right: 5px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #fdfdfd;
+    transition: all 0.5s ease-in-out;
+}
+
+.login-link:hover {
+    color: #5c85e7;
+}
+
+.register-box {
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(11, 13, 16, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease, height 0s linear 0.5s, padding 0s linear 0.5s;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.register-box h2 {
+    color: #fdfdfd;
+    text-align: center;
+    font-size: 2em;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, height 0.5s linear, padding 0.5s linear;
+    height: auto;
+    width: 500px;
+    padding: 40px;
+}

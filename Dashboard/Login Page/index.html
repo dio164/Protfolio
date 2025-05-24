@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login|Register</title>
+    <link rel="stylesheet" href="Login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="l-box" class="login-box">
+        <h2>Login</h2>
+        <div class="login-form">
+          <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input
+              id="email-known"
+              type="email"
+              title="email"
+              placeholder="example@gmail.com"
+              required
+            />
+          </div>
+          <div id="email-err" class="error-message">
+            <p>This Field is required</p>
+          </div>
+          <div id="invalid-email-err" class="error-message">
+            <p>Your Email is Invalid!</p>
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input
+              id="password-known"
+              type="password"
+              title="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div id="pass-err" class="error-message">
+            <p>Password is required</p>
+          </div>
+          <div id="invalid-password-err" class="error-message">
+            <p>Your Password is Invalid, or your account doesn't exist!</p>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox" />Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <div class="btn">
+            <button id="login-btn" type="submit" class="submit-btn">
+              Login
+            </button>
+          </div>
+          <div class="register-link-wrapper">
+            <p>Are you new?</p>
+            <a id="register-btn" class="register-link" href="#"
+              >Register here!</a
+            >
+          </div>
+        </div>
+      </div>
+      <div id="r-box" class="register-box">
+        <h2>Register</h2>
+        <div class="registration-form">
+          <div class="input-box">
+            <i class="fa-solid fa-user"></i>
+            <input
+              id="f-name"
+              type="text"
+              title="f-name"
+              placeholder="Full Name"
+              class="input-field"
+              required
+            />
+          </div>
+          <div id="name-err" class="error-message">
+            <p>Please Entering Your Full Name is required</p>
+          </div>
+          <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input
+              id="email-new"
+              type="email"
+              title="email"
+              placeholder="example@gmail.com"
+              class="input-field"
+              required
+            />
+          </div>
+          <div id="r-email-err" class="error-message">
+            <p>Email is required</p>
+          </div>
+          <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input
+              id="password-new"
+              type="password"
+              title="password"
+              placeholder="Password"
+              class="input-field"
+              required
+            />
+          </div>
+          <div id="r-pass-err" class="error-message">
+            <p>Password is required</p>
+          </div>
+          <div class="btn">
+            <button id="r-register-btn" type="submit" class="submit-btn">
+              Register
+            </button>
+          </div>
+          <div class="login-link-wrapper">
+            <p>Already have an account?</p>
+            <a id="r-login-btn" class="login-link" href="#">Login here!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/2d3c42b09f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"
+    ></script>
+    <script type="module">
+      // Dealing with authentication
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        update,
+      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDwW9lvVWMEcA42IgvuI2pwHsg5LbtDoBE",
+        authDomain: "dashboard-redo.firebaseapp.com",
+        projectId: "dashboard-redo",
+        storageBucket: "dashboard-redo.appspot.com",
+        messagingSenderId: "1032950375634",
+        appId: "1:1032950375634:web:2bf003ca403265d729790b",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+
+      let inputField1 = document.getElementById("f-name");
+      let inputField2 = document.getElementById("email-new");
+      let inputField3 = document.getElementById("password-new");
+
+      function clearText() {
+        inputField1.value = "";
+        inputField2.value = "";
+        inputField3.value = "";
+        console.log("Text fields cleared!");
+      }
+
+      RegisterRBtn = document.getElementById("r-register-btn");
+
+      RegisterRBtn.addEventListener("click", function (e) {
+        RegisterRBtn.innerHTML = "<div class='loader'></div>";
+        let RemailError = document.getElementById("r-email-err");
+        let RpasswordError = document.getElementById("r-pass-err");
+        let RnameError = document.getElementById("name-err");
+
+        function displayEmailRegistrationErrorMessage() {
+          RemailError.classList.add("show-error-message");
+          console.log("Error worked!");
+        }
+        function RemoveEmailRegistrationErrorMessage() {
+          RemailError.classList.remove("show-error-message");
+          console.log("Error worked!");
+        }
+
+        function displayPasswordRegistrationErrorMessage() {
+          RpasswordError.classList.add("show-error-message");
+          console.log("Error worked!");
+        }
+        function RemovePasswordRegistrationErrorMessage() {
+          RpasswordError.classList.remove("show-error-message");
+          console.log("Error worked!");
+        }
+
+        function displayNameRegistrationErrorMessage() {
+          RnameError.classList.add("show-error-message");
+          console.log("Error worked!");
+        }
+        function RemoveNameRegistrationErrorMessage() {
+          RnameError.classList.remove("show-error-message");
+          console.log("Error worked!");
+        }
+
+        let email = document.getElementById("email-new").value;
+        let password = document.getElementById("password-new").value;
+        let full_name = document.getElementById("f-name").value;
+
+        let RemailField = document.getElementById("email-new");
+        let RpasswordField = document.getElementById("password-new");
+        let Rfull_nameField = document.getElementById("f-name");
+
+        RemailField.addEventListener("input", function () {
+          RemoveEmailRegistrationErrorMessage();
+        });
+
+        RpasswordField.addEventListener("input", function () {
+          RemovePasswordRegistrationErrorMessage();
+        });
+
+        Rfull_nameField.addEventListener("input", function () {
+          RemoveNameRegistrationErrorMessage();
+        });
+
+        function clientSideRegistrationValidation() {
+          if (email === "") {
+            displayEmailRegistrationErrorMessage();
+          }
+
+          if (password === "") {
+            displayPasswordRegistrationErrorMessage();
+          }
+          if (full_name === "") {
+            displayNameRegistrationErrorMessage();
+          }
+
+          if (email !== "") {
+            RemoveEmailRegistrationErrorMessage();
+          }
+          if (password !== "") {
+            RemovePasswordRegistrationErrorMessage();
+          }
+          if (full_name !== "") {
+            RemoveNameRegistrationErrorMessage();
+          }
+        }
+
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed up
+            const user = userCredential.user;
+
+            set(ref(database, "users/", user.uid), {
+              full_name: full_name,
+              email: email,
+              password: password,
+            });
+            alert("User Created!");
+            clearText();
+            switchToLogin();
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setTimeout(function () {
+              if (errorMessage === "") {
+                RegisterRBtn.innerHTML = "Registered!";
+              } else {
+                // Display error message and revert button text
+                alert("Registration failed. Please try again.");
+                RegisterRBtn.innerHTML = "Register";
+              }
+            }, 1000);
+
+            clientSideRegistrationValidation();
+            // ..
+          });
+      });
+
+      LoginLBtn = document.getElementById("login-btn");
+      LoginLBtn.addEventListener("click", function (e) {
+        LoginLBtn.innerHTML = "<div class='loader'></div>";
+
+        let emailError = document.getElementById("email-err");
+        let passwordError = document.getElementById("pass-err");
+        let InvalidEmailError = document.getElementById("invalid-email-err");
+        let InvalidPasswordError = document.getElementById(
+          "invalid-password-err"
+        );
+
+        function displayEmailErrorMessage() {
+          emailError.classList.add("show-error-message");
+          console.log("Email Error!");
+        }
+        function RemoveEmailErrorMessage() {
+          emailError.classList.remove("show-error-message");
+          console.log("Error worked!");
+        }
+        function displayPasswordErrorMessage() {
+          passwordError.classList.add("show-error-message");
+          console.log("Password Error!");
+        }
+        function RemovePasswordErrorMessage() {
+          passwordError.classList.remove("show-error-message");
+          console.log("Error worked!");
+        }
+        function displayInvalidEmailErrorMessage() {
+          InvalidEmailError.classList.add("show-error-message");
+          console.log("Invalid Email");
+        }
+        function RemoveInvalidEmailErrorMessage() {
+          InvalidEmailError.classList.remove("show-error-message");
+          console.log("error cleared....email valid");
+        }
+        function displayInvalidPasswordErrorMessage() {
+          InvalidPasswordError.classList.add("show-error-message");
+          console.log("Invalid Password");
+        }
+        function RemoveInvalidPasswordErrorMessage() {
+          InvalidPasswordError.classList.remove("show-error-message");
+          console.log("error cleared....Password valid");
+        }
+
+        let email = document.getElementById("email-known").value;
+        let password = document.getElementById("password-known").value;
+
+        let emailField = document.getElementById("email-known");
+        let passwordField = document.getElementById("password-known");
+
+        emailField.addEventListener("input", function () {
+          RemoveEmailErrorMessage();
+          RemoveInvalidEmailErrorMessage();
+        });
+
+        passwordField.addEventListener("input", function () {
+          RemovePasswordErrorMessage();
+          RemoveInvalidPasswordErrorMessage();
+        });
+
+        function clientSideValidation() {
+          if (email === "") {
+            displayEmailErrorMessage();
+            RemoveInvalidEmailErrorMessage();
+          }
+
+          if (password === "") {
+            displayPasswordErrorMessage();
+          }
+
+          if (email !== "") {
+            RemoveEmailErrorMessage();
+          }
+
+          if (password !== "") {
+            RemovePasswordErrorMessage();
+          }
+        }
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            const dt = new Date();
+            update(ref(database, "users/", user.uid), {
+              last_login: dt,
+            });
+
+            alert("Logged in!");
+            window.location.href = "https://dashboard-psi-drab.vercel.app/";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            if (errorMessage === "Firebase: Error (auth/invalid-email).") {
+              displayInvalidEmailErrorMessage();
+            }
+            if (errorMessage === "Firebase: Error (auth/invalid-credential).") {
+              displayInvalidPasswordErrorMessage();
+            }
+            console.log(errorMessage);
+            setTimeout(function () {
+              if (errorMessage === "") {
+                LoginLBtn.innerHTML = "Logged In!";
+              } else {
+                // Display error message and revert button text
+                alert("Login failed. Please try again.");
+                LoginLBtn.innerHTML = "Login";
+              }
+            }, 1000);
+
+            clientSideValidation();
+          });
+      });
+    </script>
+    <script src="Login.js"></script>
+  </body>
+</html>
